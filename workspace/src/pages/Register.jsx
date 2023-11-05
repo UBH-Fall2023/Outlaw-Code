@@ -18,18 +18,17 @@ function Register() {
     //https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
 
 
-
-    
-
     if ( username.length == 0 ){
       alert ("Username field is empty");
         //some feedback on empty fields
+        return false
     }
 
     if (password.length == 0){
         
         alert("Password field is empty");
         //some feedback on empty fields
+        return false
     }
 
     console.log(pattern.test(password))
@@ -37,15 +36,18 @@ function Register() {
     if (pattern.test(password) == false){
         alert("Password must contain 8+ characters, including at least one letter and number.")
         //some feedback on weak pass
+        return false
     }
 
     if (usernamePattern.test(username) == false){
         
         alert("Username is invalid");
+        return false
         //some feedback on weak pass
     }
 
     else if((usernamePattern.test(username)==true) && (pattern.test(password)==true)){
+      return true
       alert("User registered!");
       navigate("/files");
     }
@@ -63,7 +65,7 @@ function Register() {
     const username = form.get("username")
     const password = form.get("password")
 
-    const feedback = validatePassword (username, password)
+    //const feedback = validatePassword (username, password)
     
 
    };
