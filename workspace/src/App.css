@@ -1,0 +1,49 @@
+.colored-background { 
+  background-image: url("./western_landscape.png"); /* Replace 'path/to/background-image.jpg' with the actual path to your image */ 
+  background-size: cover; /* Scales the image to cover the entire element */ 
+  background-position: center; /* Centers the image within the element */ 
+  color: rgb(255, 255, 255); 
+  padding: 20px; height: 100vh;
+} 
+
+.main-title { 
+  color: #ede1d1; /* Change the text color to blue */ 
+  font-size: 70px; /* Adjust the font size */ 
+  font-family: 'Cowboys', sans-serif; 
+  font-style: normal; 
+  font-weight: 400; 
+  margin-top: 150px; 
+  line-height: normal; 
+  text-align: center; /* Center-align the text */ /* Add more styles as needed */ 
+} 
+
+.button-link { 
+  display: block; /* Make the buttons block-level elements to stack vertically */
+  margin: 10px 0; /* Add margin to separate the buttons vertically */ /* background-color: #0074d9; Set the background color */ 
+} 
+
+.button-container { 
+  display: block; 
+  text-align: center; /* Center-align the buttons horizontally */ /* padding: 10px 24px; */ 
+} 
+
+.buttons { 
+  color: #ede1d1; /* Set the text color to white */ 
+  background-color: #231709; /* opacity: 0.9; */ 
+  padding: 10px 20px; /* Add padding to the buttons */ /* border-bottom: none; Remove the default button borde */ 
+  border-radius: 5px; /* Add rounded corners */ 
+  border-color: white; 
+  cursor: pointer; /* Change the cursor to a pointer on hover */ 
+  font-family: 'Cowboys', sans-serif; 
+  font-weight: lighter; /* Set the font weight to bold */ 
+  font-size: 25px; text-decoration: none; /* Remove underline on hover */ 
+  height: 50px; 
+  width: 250px; 
+  margin: 10px; 
+  border: none; 
+
+} 
+
+.buttons:hover { 
+  background-color: #432616; 
+}
