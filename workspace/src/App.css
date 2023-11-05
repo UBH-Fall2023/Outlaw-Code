@@ -116,8 +116,22 @@ width: 50px;
 }
 
 .add-media{
-    width: 54px;
-    height: 54px;
-    cursor: pointer;
-    margin-bottom: 700px;
+width: 54px;
+height: 54px;
+cursor: pointer;
+margin-bottom: 700px;
+}
+
+.add-folder{
+width: 54px;
+height: 54px;
+cursor: pointer;
+margin-bottom: 700px;
+}
+
+.trash{
+width: 54px;
+height: 54px;
+cursor: pointer;
+margin-bottom: 700px;
 }
