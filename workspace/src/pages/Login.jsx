@@ -96,7 +96,11 @@ function Login() {
             </form>
           </div>
           <button className="Reg-button" onClick={handleSubmit}> Login </button>
-      </body>
+          </body>
+        <div className="form-container"> 
+          <img src={Star} alt="Star"className='star' />
+          </div>
+      
     </div>
 
       

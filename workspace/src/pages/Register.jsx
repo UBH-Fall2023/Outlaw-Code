@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
+import Star from "../assets/sheriff.png";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 function Register() {
 
@@ -115,6 +116,10 @@ function Register() {
           </div>
           <button onClick={handleSubmit} className="Reg-button"> Register </button>
       </body>
+      
+      <div className="myform-container"> 
+          <img src={Star} alt="Star"className='star' />
+          </div>
     </div>
     
   );

@@ -55,16 +55,10 @@ function Files() {
       <img src={AddFolder} className='add-folder'/>
       <img src={Trash} className='trash'/>
       <img src={Logout} className='logout'/>
+
       
-      <svg xmlns="http://www.w3.org/2000/svg" width="1337" height="666" viewBox="0 0 1337 666" fill="none" className='transparent'>
-        <path d="M0 25C0 11.1929 11.1929 0 25 0H1312C1325.81 0 1337 11.1929 1337 25V641C1337 654.807 1325.81 666 1312 666H25C11.1929 666 0 654.807 0 641V25Z" fill="#D9D9D9" fill-opacity="0.23"/>
-        <form onSubmit={handleUpload}>
-          <input type="file" name="file" />
-        </form>
-        <div>Your Files:</div>
-        {/* <DocViewer documents={docs} pluginRenderers={DocViewerRenderers}/> */}
-      </svg>
-      {/* <div className='file-background'></div> */}
+      
+      
       
       
 
@@ -74,3 +68,13 @@ function Files() {
 }
 
 export default Files;
+
+// {/* <svg xmlns="http://www.w3.org/2000/svg" width="1337" height="600" viewBox="0 0 1337 666" fill="none" className='transparent'>
+//         <path d="M0 25C0 11.1929 11.1929 0 25 0H1312C1325.81 0 1337 11.1929 1337 25V641C1337 654.807 1325.81 666 1312 666H25C11.1929 666 0 654.807 0 641V25Z" fill="#D9D9D9" fill-opacity="0.23"/>
+//         <form onSubmit={handleUpload}>
+//           <input type="file" name="file" />
+//         </form>
+        
+//         {/* <DocViewer documents={docs} pluginRenderers={DocViewerRenderers}/> */}
+//         </svg>
+//       <div className='file-background'></div> */}
