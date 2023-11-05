@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './Register.css';
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 function Register() {
 
   const navigate = useNavigate();
@@ -53,7 +51,7 @@ function Register() {
     }
 
     if (usernamePattern.test(username) == false){
-        
+  
         alert("Username is invalid");
         
         //some feedback on weak pass
@@ -85,10 +83,12 @@ function Register() {
         rel="stylesheet"
         href="https://fonts.cdnfonts.com/css/cowboys"
       />
-        
+        <link href="https://fonts.cdnfonts.com/css/carnivalee-freakshow" rel="stylesheet"/>
       </header>
       <body>
-      <button className="Header-title">Outlaw Network</button>
+        <Link to="/">
+        <button className="Header-title">File Frontier</button>
+        </Link>
           <div className="Reg-rectangle">
             <form onSubmit={handleSubmit}>
             <div className="enterforms">

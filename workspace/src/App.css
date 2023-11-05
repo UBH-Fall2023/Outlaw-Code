@@ -5,11 +5,13 @@
     background: linear-gradient(180deg, #F8905E 0%, #E6A94F 100%);
     /* background-color: #FF8B02; */
 }
-
+/* 
 @font-face {
     font-family: "cowboys";
     src: url("https://fonts.cdnfonts.com/css/cowboys") format('woff');
-}
+} */
+
+
 
 
 
@@ -142,6 +144,14 @@ display:inline-block;
 }
 
 .logout{
+width: 54px;
+height: 54px;
+cursor: pointer;
+margin-bottom: 700px;
+display:inline-block;
+}
+
+.file{
 width: 54px;
 height: 54px;
 cursor: pointer;

@@ -1,92 +1,92 @@
 .Reg {
-    text-align: center;
+  text-align: center;
+}
+
+.Reg {
+  background:linear-gradient(rgb(230, 169, 79, 6),transparent);
+  background-color: #FF8B02;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header-title{
+  text-align: center;
+  position: center;
+  width: 500px;
+  height: 47px;
+  flex-shrink: 0;
+  color: #FFF;
+  background: none;
+  border: none;
+  margin-top: 80px;
+  font-family: "Cowboys", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Reg-rectangle {
+  width: 800px;
+  height: 300px;
+  flex-shrink: 0; 
+  border-radius: 25px;
+  background: rgba(217, 217, 217, 0.20);
+  mix-blend-mode: screen;
+}
+.enterforms{
+  padding-top: 75px;
+}
+
+.Reg-button {
+  text-align: center;
+  margin-top: 50px;
+  width: 220px;
+  height: 103px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: none;
+  background: #be8545;
+  color: #FFF;
+  font-family: 'Carnivalee Freakshow', sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
   }
-  
-  .Reg {
-    background:linear-gradient(rgb(230, 169, 79, 6),transparent);
-    background-color: #FF8B02;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .Header-title{
-    text-align: center;
-    position: center;
-    width: 500px;
-    height: 47px;
-    flex-shrink: 0;
-    color: #FFF;
-    background: none;
-    border: none;
-    margin-bottom: 150px;
-    font-family: "Cowboys", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  
-  .Reg-rectangle {
-    width: 800px;
-    height: 400px;
-    flex-shrink: 0; 
-    border-radius: 25px;
-    background: rgba(217, 217, 217, 0.20);
-    mix-blend-mode: screen;
-  }
-  .enterforms{
-    padding-top: 75px;
-  }
-  
-  .Reg-button {
-    text-align: center;
-    margin-top: 50px;
-    width: 220px;
-    height: 103px;
-    flex-shrink: 0;
-    border-radius: 30px;
-    border: none;
-    background: #be8545;
-    color: #FFF;
-    font-family: Carnivalee Freakshow;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    
-    }
-  
-  .Reg-button:hover{
-    cursor: pointer;
-    background: #c07e32;
-  }
-  
-  .username{
-    padding-right: 20px;
-    padding-top: 100px;
-    
-  }
-  .username{
-    color: #FFF;
-    font-family: Carnivalee Freakshow;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  
-  .password{
-    padding-right: 20px;
-    padding-top: 100px;
-  }
-  .password{
-    color: #FFF;
-    font-family: Carnivalee Freakshow;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+
+.Reg-button:hover{
+  cursor: pointer;
+  background: #c07e32;
+}
+
+.username{
+  padding-right: 20px;
+  padding-top: 100px;
+
+}
+.username{
+  color: #FFF;
+  font-family: 'Carnivalee Freakshow', sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.password{
+  padding-right: 20px;
+  padding-top: 100px;
+}
+.password{
+  color: #FFF;
+  font-family: 'Carnivalee Freakshow', sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
