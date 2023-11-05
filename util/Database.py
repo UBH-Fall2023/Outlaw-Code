@@ -14,7 +14,8 @@ class Database:
                 #start database 
                 print('Server not started')
 
-        self.collections = {'acconts': self.db['accounts']
+        self.collections = {'acconts': self.db['accounts'],
+                            'tokenSalt': self.db['tokenSalt']
                             }
                 
     def createCollection(self,name :str):

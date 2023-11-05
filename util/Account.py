@@ -1,7 +1,6 @@
 import pymongo
 from util.Database import Database 
 import bcrypt
-from util.Helpers import getCookies
 from util.globals import DATABASE
 class Accounts:
     def __init__(self):
@@ -23,14 +22,14 @@ class Accounts:
             
         return (False,None)
     
-    def authenticate(self,requestIn):
+    def authenticate(self,token):
         TOKENSALT = self.db.findFirst('tokenSalt')['tokenSalt']
         #cookies = getCookies(requestIn)
         user = None
         username = 'Guest'
-        if cookies != None and cookies.keys().__contains__('token'):
+        if token!= None:
             #check if hashed token ex
-            tokenMatches = self.db.find_asList('userTokens',{'token':(bcrypt.hashpw(cookies['token'].encode(),TOKENSALT))})
+            tokenMatches = self.db.find_asList('userTokens',{'token':(bcrypt.hashpw(token.encode(),TOKENSALT))})
             if len(tokenMatches) > 0:
                 user  = tokenMatches[0]
                 username = user['username']

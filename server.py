@@ -1,8 +1,17 @@
-from flask import Flask, make_response, send_from_directory,request
+from flask import Flask, make_response, send_from_directory,request,send_file
 import os
 from werkzeug.utils import secure_filename
+from util.Database import Database
+from util.globals import DATABASE
+from util.Account import Accounts
+import bcrypt
+import random
+from datetime import *
+import pytz
+import string
+import mimetypes
 app = Flask(__name__)
-
+SAVEFOLDER = 'uploads'
 
 @app.route("/<path:path>",methods=['GET','POST'])
 def getPage(path):
@@ -24,22 +33,73 @@ def index():
 
     return response
 
-@app.route('/upload_file',methods=['GET','POST'])
+@app.route('/ends/upload_file',methods=['GET','POST'])
 def upload_file():
     response = 'ya modda'
+    accounts = Accounts()
+    token = None
+    if 'cookies' in request.cookies: 
+        token = request.cookies.get('token')
+    username,user = accounts.authenticate(token=token)
+
+    if not os.path.exists(f'{SAVEFOLDER}/{username}'):
+        os.mkdir(f'{SAVEFOLDER}/{username}')
+
     if request.method == 'POST':
         if 'file' in request.files:
             file = request.files['file']
-            file.save(f'{os.getcwd()}/{secure_filename(file.filename)}')
+            file.save(f'{os.getcwd()}/{SAVEFOLDER}/{username}/{secure_filename(file.filename)}')
     return response
 
-@app.route('/login',methods=['POST'])
+@app.route('/ends/login',methods=['POST'])
 def login():
-    pass
+    print(request)    
+    rawUsername = None
+    rawPassword = None
+    accounts = Accounts()
+    TOKENSALT = db.findFirst('tokenSalt')['tokenSalt']
+    found,user = accounts.login(rawUsername,rawPassword)
+    if found:
+        #gen token
+        randomToken = ''.join(random.choices(string.ascii_lowercase + string.digits,k=20))
+        
+        #Set expiration date of auth token to 7 hour in futue
+        expiration = (pytz.timezone('US/Eastern').localize(datetime.now()) +
+                        timedelta(hours=20))
+        db.insertOne('userTokens',
+                     {'username':user['username'],
+                      'token': bcrypt.hashpw(randomToken.encode(),TOKENSALT)})  
+        
+        resp = make_response(f'User authenticaed')
+        resp.set_cookie('token',randomToken,expires=expiration) 
+    else:
+        return 'login failed'
 
-@app.route('/register',methods=['POST'])
+@app.route('/ends/getFile',methods=['POST'])
+def getFile():
+    accounts = Accounts()
+    token = None
+    token = request.cookies.get('token')
+    username,user = accounts.authenticate(token=token)
+    #only
+    file = request.form.get('file')
+    return send_file(f'{SAVEFOLDER}/{username}/{file}',mimetypes.guess_type(file)[0])
+    #return send_from_directory(f'{os.getcwd()}/{SAVEFOLDER}',f'{secure_filename(file)}')
+@app.route('/ends/register',methods=['POST'])
 def regiter():
-    pass
+    print(request)
+    rawUsername = None
+    rawPassword = None
+
+    acconuts = Accounts()
+    acconuts.createUser(rawUsername,rawPassword)
+
+    return 'account registered'
 
 if __name__ == '__main__':
-    app.run(host='10.42.0.1',port=5001)
+     #start Database
+    db = DATABASE
+    #initialize some database variables if database is new
+    if db.countDocs('tokenSalt',{}) <= 0:
+        db.insertOne('tokenSalt',{'tokenSalt':bcrypt.gensalt()})
+    app.run(port=5002)
