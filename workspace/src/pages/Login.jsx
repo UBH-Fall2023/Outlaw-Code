@@ -34,6 +34,7 @@ function Login() {
       };
 
     const [formData, setFormData] = useState({ username: '', password: '' });
+   
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -72,15 +73,18 @@ function Login() {
             />  
 
             <br></br>
+
+            <button type="submit" className='login-btn'>Login</button>
         </form>
 
-        <button type="submit" className='login-btn'>Login</button>
-      
         <img
             alt="sheriff badge"
-            width={"250px"}
+            width={"200px"}
             src={Star}
             className='star'/>
+
+      
+        
     </div>
   );
 }
