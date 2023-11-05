@@ -24,8 +24,6 @@ def index():
 
     return response
 
-# @app.route('/upload_file.html',methods=['POST'])
-# def upload()
 @app.route('/upload_file',methods=['GET','POST'])
 def upload_file():
     response = 'ya modda'
@@ -34,7 +32,14 @@ def upload_file():
             file = request.files['file']
             file.save(f'{os.getcwd()}/{secure_filename(file.filename)}')
     return response
-    
+
+@app.route('/login',methods=['POST'])
+def login():
+    pass
+
+@app.route('/register',methods=['POST'])
+def regiter():
+    pass
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(host='10.42.0.1',port=5001)
