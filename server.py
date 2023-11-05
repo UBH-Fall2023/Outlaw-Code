@@ -102,8 +102,8 @@ def getAllFiles():
     files = os.listdir(f'{SAVEFOLDER}/Guest')
     resp = ''
     for file in files:
-        resp+=file
-    return resp
+        resp+=file + '|| \r\n'
+    return make_response(resp)
 
 if __name__ == '__main__':
      #start Database
