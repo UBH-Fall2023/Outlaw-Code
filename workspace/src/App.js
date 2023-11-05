@@ -21,7 +21,7 @@ function App() {
   }, [])
   return (
     <div className='App'>
-      <div className='outlaw-network'>Outlaw Network</div> 
+      {/* <div className='outlaw-network'>Outlaw Network</div>  */}
       <Router>
         
           <Routes>
