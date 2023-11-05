@@ -118,8 +118,8 @@ function Register() {
       </body>
       
       <div className="myform-container"> 
-          <img src={Star} alt="Star"className='star' />
-          </div>
+          <img src={Star} alt="Star"className='mystar' />
+      </div>
     </div>
     
   );
