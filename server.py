@@ -35,13 +35,13 @@ def index():
 
 @app.route('/ends/upload_file',methods=['GET','POST'])
 def upload_file():
-    response = 'ya modda'
-    accounts = Accounts()
+    response = 'File uploaded'
+    #accounts = Accounts()
     token = None
     if 'cookies' in request.cookies: 
         token = request.cookies.get('token')
-    username,user = accounts.authenticate(token=token)
-
+    #username,user = accounts.authenticate(token=token)
+    username = 'Guest'
     if not os.path.exists(f'{SAVEFOLDER}/{username}'):
         os.mkdir(f'{SAVEFOLDER}/{username}')
 
@@ -81,7 +81,7 @@ def getFile():
     token = None
     token = request.cookies.get('token')
     #username,user = accounts.authenticate(token=token)
-    username = 'guest'
+    username = 'Guest'
     #only
     file = request.form.get('file')
     return send_file(f'{SAVEFOLDER}/{username}/{file}',mimetypes.guess_type(file)[0])
@@ -96,6 +96,14 @@ def regiter():
     acconuts.createUser(rawUsername,rawPassword)
 
     return 'account registered'
+
+@app.route('/ends/view_files',methods=['GET'])
+def getAllFiles():
+    files = os.listdir(f'{SAVEFOLDER}/Guest')
+    resp = ''
+    for file in files:
+        resp+=file
+    return resp
 
 if __name__ == '__main__':
      #start Database
