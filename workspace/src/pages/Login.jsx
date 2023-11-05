@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "../App.css";
+import './Register.css';
 import Star from "../assets/sheriff.png";
 
 // A functional component for the dashboard page
@@ -43,49 +44,53 @@ function Login() {
 
 
   return (
-    <div >
-
+    <div className="Reg">
+      <header className="Reg-header">
+      <link
+        rel="stylesheet"
+        href="https://fonts.cdnfonts.com/css/cowboys"
+      />
         
-        <form onSubmit={handleSubmit} className="form">
+      </header>
+      <body>
+      <button className="Header-title">Outlaw Network</button>
+          <div className="Reg-rectangle">
+            <form onSubmit={handleSubmit}>
+            <div className="enterforms">
+              <label htmlFor="username" className='username'>Username:</label>
+                <input className='input-box'
+                type="username"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleInputChange}
+                required
+                /> 
+              <label htmlFor="password" className='password'>Password:</label>
+                <input className='input-box'
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                /> 
+            </div>
+            </form>
+          </div>
+          <button className="Reg-button"> Login </button>
+      </body>
+    </div>
 
-        <br></br>
-           
-            <label htmlFor="username" className='username'>Username:</label>
-            
-            <input className='input-box'
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            required/>
+      
 
-            <br></br><br></br>
-            
-            <label htmlFor="password" className='password'>Password:</label>
-            <input className='input-box'
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            required
-            />  
+       
 
-            <br></br>
 
-            <button type="submit" className='login-btn'>Login</button>
-        </form>
-
-        <img
-            alt="sheriff badge"
-            width={"200px"}
-            src={Star}
-            className='star'/>
 
       
         
-    </div>
+    
   );
 }
 

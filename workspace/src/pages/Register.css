@@ -55,8 +55,14 @@
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal
+    line-height: normal;
+    
     }
+  
+  .Reg-button:hover{
+    cursor: pointer;
+    background: #c07e32;
+  }
   
   .username{
     padding-right: 20px;
