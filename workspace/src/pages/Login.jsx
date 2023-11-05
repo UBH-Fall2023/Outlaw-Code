@@ -7,7 +7,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // fetch('/api/login', {
+        // fetch('ends/login', {
         //     method: 'POST',
         //     headers: {
         //       'Content-Type': 'application/json'
@@ -18,10 +18,11 @@ function Login() {
         //     if (response.ok) {
         //       return response.json();
         //     }
-        //     throw new Error('Login failed'); // You can customize this error message
+        //     alert('Login failed'); // You can customize this error message
         //   })
         //   .then(data => {
         //     console.log('Login successful:', data);
+                //alert("Login successful")
         //     // You can handle the successful login here, e.g., redirect the user.
         //   })
         //   .catch(error => {
@@ -45,8 +46,11 @@ function Login() {
 
         
         <form onSubmit={handleSubmit} className="form">
+
+        <br></br>
            
             <label htmlFor="username" className='username'>Username:</label>
+            
             <input className='input-box'
             type="text"
             id="username"
@@ -55,7 +59,7 @@ function Login() {
             onChange={handleInputChange}
             required/>
 
-            <br></br>
+            <br></br><br></br>
             
             <label htmlFor="password" className='password'>Password:</label>
             <input className='input-box'
@@ -65,17 +69,18 @@ function Login() {
             value={formData.password}
             onChange={handleInputChange}
             required
-            />
+            />  
 
-            <br></br><br></br>
-
-            <button type="submit" className='login-btn'>Login</button>
+            <br></br>
         </form>
+
+        <button type="submit" className='login-btn'>Login</button>
       
         <img
             alt="sheriff badge"
             width={"250px"}
-            src={Star}/>
+            src={Star}
+            className='star'/>
     </div>
   );
 }

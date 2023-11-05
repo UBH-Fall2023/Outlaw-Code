@@ -29,17 +29,18 @@ font-size: 30px;
 .username{
 color: #FFF;
 font-family: "cowboys";
-font-size: 60px;
+font-size: 50px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 padding: 20px;
+
 }
 
 .password{
 color: #FFF;
 font-family: "cowboys";
-font-size: 64px;
+font-size: 50px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -64,10 +65,13 @@ border-radius: 25px;
 background: rgba(217, 217, 217, 0.20);
 mix-blend-mode: screen;
 width: 878px;
-height: 486px;
+height: 200px;
 flex-shrink: 0;
-margin-top: 3%;
-margin-left: 25%;
+margin-left: 281px;
+margin-top: 225px;
+margin-right: 281px;
+margin-bottom: 213px;
+
 
 }
 
@@ -79,4 +83,9 @@ font-family: "cowboys";
 font-weight: bold;
 cursor: pointer;
 font-size: 60px;
+}
+
+.star{
+    margin-left: 900px
+
 }
