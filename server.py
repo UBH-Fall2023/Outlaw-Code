@@ -2,8 +2,8 @@ from flask import Flask, make_response, send_from_directory,request,send_file
 import os
 from werkzeug.utils import secure_filename
 from util.Database import Database
-from util.globals import DATABASE
-from util.Account import Accounts
+#from util.globals import DATABASE
+#from util.Account import Accounts
 import bcrypt
 import random
 from datetime import *
@@ -77,10 +77,11 @@ def login():
 
 @app.route('/ends/getFile',methods=['POST'])
 def getFile():
-    accounts = Accounts()
+    #accounts = Accounts()
     token = None
     token = request.cookies.get('token')
-    username,user = accounts.authenticate(token=token)
+    #username,user = accounts.authenticate(token=token)
+    username = 'guest'
     #only
     file = request.form.get('file')
     return send_file(f'{SAVEFOLDER}/{username}/{file}',mimetypes.guess_type(file)[0])
@@ -98,8 +99,8 @@ def regiter():
 
 if __name__ == '__main__':
      #start Database
-    db = DATABASE
+    #db = DATABASE
     #initialize some database variables if database is new
-    if db.countDocs('tokenSalt',{}) <= 0:
-        db.insertOne('tokenSalt',{'tokenSalt':bcrypt.gensalt()})
-    app.run(port=5002)
+    #if db.countDocs('tokenSalt',{}) <= 0:
+     #   db.insertOne('tokenSalt',{'tokenSalt':bcrypt.gensalt()})
+    app.run(host='192.168.1.31',port=5002)

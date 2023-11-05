@@ -6,8 +6,8 @@ class Database:
         serverStarted = False
         while not serverStarted:
             try:
-                with pymongo.timeout(5):
-                    self.client.list_database_names()
+                #with pymongo.timeout(5):
+                self.client.list_database_names()
                 serverStarted = True
                 self.db = self.client[db_name]
             except pymongo.errors.ServerSelectionTimeoutError:
