@@ -18,7 +18,7 @@ function Register() {
   };
 
   return (
-    <Router>
+    
     <div className="Reg">
       <header className="Reg-header">
       <link
@@ -30,6 +30,7 @@ function Register() {
       <body>
       <button className="Header-title">Outlaw Network</button>
           <div className="Reg-rectangle">
+            <form>
             <div className="enterforms">
               <label htmlFor="username" className='username'>Username:</label>
                 <input className='input-box'
@@ -50,11 +51,12 @@ function Register() {
                 required
                 /> 
             </div>
+            </form>
           </div>
           <button className="Reg-button"> Register </button>
       </body>
     </div>
-    </Router>
+    
   );
 }
 

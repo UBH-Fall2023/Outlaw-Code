@@ -1,12 +1,10 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React from 'react';
 
 function Dashboard() {
   return (
-    <Router>
+    
     <div className="colored-background">
       <head>
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cowboys" />
@@ -28,7 +26,7 @@ function Dashboard() {
         </div>
       </body>
     </div>
-    </Router>
+    
   );
 }
 

@@ -6,7 +6,7 @@ import Logout from "../assets/Logout.png";
 import Trash from "../assets/Trash.png";
 
 
-import DocViewer from "react-doc-viewer";
+//import DocViewer from "react-doc-viewer";
 
 import { useState } from 'react';
 // A functional component for the dashboard page
@@ -62,7 +62,7 @@ function Files() {
           <input type="file" name="file" />
         </form>
         <div>Your Files:</div>
-        <DocViewer documents={docs} pluginRenderers={DocViewerRenderers}/>
+        {/* <DocViewer documents={docs} pluginRenderers={DocViewerRenderers}/> */}
       </svg>
       {/* <div className='file-background'></div> */}
       
